@@ -85,10 +85,10 @@ Este documento contém um resumo das atividades realizadas e problemas identific
 ## *Guilherme Camargo*
 
 ### Atividades Realizadas
-- 
+- Atividades 1 e 2 concluídas, estudo SQL/Hive.
 
 ### Problemas Identificados
-- 
+- Realização da query completa na atividade 2 devido erros de execução.
 
 ---
 
