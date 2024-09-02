@@ -36,17 +36,19 @@ Este documento contém um resumo das atividades realizadas e problemas identific
 - Dificuldade com alguns termos técnicos e falta de prática na trilha de conhecimento, facilmente resolvido com auxílio de ferramentas como vídeoaulas, sites especializados e IA.
 ---
 
-## *Rafael*
+## *Rafael Sinkevicius*
 
 ### Atividades Realizadas
-- 
+- Atividades 1 e 2 concluídas
+- Estudo sobre CTEs e alguns outros conceitos SQL/Hive.
 
 ### Problemas Identificados
--
+- Squad com pouca interação no início
+- Dificuldade na montagem do script SQL e correção do mesmo em saídas erradas nas quais o comando estava correto.
 
 ---
 
-## *Luiz Talez*
+## *Luiz Teles*
 
 ### Atividades Realizadas
 - 
@@ -76,7 +78,7 @@ Este documento contém um resumo das atividades realizadas e problemas identific
 
 ---
 
-## *Kaneda*
+## *Guilherme Kaneda*
 
 ### Atividades Realizadas
 - 
