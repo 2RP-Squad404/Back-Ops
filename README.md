@@ -50,11 +50,13 @@ Este documento contém um resumo das atividades realizadas e problemas identific
 
 ## *Luiz Teles*
 
-### Atividades Realizadas
-- 
+### Atividades realizadas
+- Atividades 1 e 2.
+- estudo sobre python
+
 
 ### Problemas Identificados
-- 
+- Dificuldade em entender como funciona o hive, python e principalmente no script de sql. Também um pouco no último exercício onde teria que puxar a data de tipo int.
 
 ---
 
