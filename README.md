@@ -1,8 +1,8 @@
 # Back-Ops
-
+<div style="text-align: justify;">
 > Resumo Semanal da Squad
 
-Este documento contém um resumo das atividades realizadas e problemas identificados por cada membro da squad durante a última semana. Cada membro deve adicionar suas informações na seção correspondente ao seu nome.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Este documento contém um resumo das atividades realizadas e problemas identificados por cada membro da squad durante a última semana. Cada membro deve adicionar suas informações na seção correspondente ao seu nome.
 
 ## Membros da Squad
 
@@ -52,7 +52,7 @@ Este documento contém um resumo das atividades realizadas e problemas identific
 
 ### Atividades realizadas
 - Atividades 1 e 2.
-- estudo sobre python
+- Estudo sobre python.
 
 
 ### Problemas Identificados
@@ -75,10 +75,10 @@ Este documento contém um resumo das atividades realizadas e problemas identific
 ## *Henrique*
 
 ### Atividades Realizadas
-- 
+- Estou desenvolvendo o desafio final da trilha de conhecimento de Back End, com foco na biblioteca de criptografia e serviço de mensageria com o Kafka. 
 
 ### Problemas Identificados
-- 
+- Uns do metodos da Biblioteca de criptografia está barrando o desenvolvimento por mal funcionamento, estou tentanto arruma-lá ou descobrindo uma nova maneira para prosseguir. 
 
 ---
 
@@ -90,12 +90,7 @@ Este documento contém um resumo das atividades realizadas e problemas identific
 ### Problemas Identificados
 - Realização da query completa na atividade 2 devido erros de execução.
 
----
+## *Sobre o grupo*
+* O grupo consegue conversar e ajudar entre si;
 
-## *Guilherme Kaneda*
-
-### Atividades Realizadas
-- 
-
-### Problemas Identificados
-- 
+</div>
