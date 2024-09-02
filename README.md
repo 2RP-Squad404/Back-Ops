@@ -28,11 +28,12 @@ Este documento contém um resumo das atividades realizadas e problemas identific
 ## *Gustavo Monteiro*
 
 ### Atividades Realizadas
-- 
+- Conclusão das tarefas 1 e 2, Rotina ETL e Script SQl para análise de campanhas
+- Estudo sobre SQL/Hive, HiveQL e CTE.
 
 ### Problemas Identificados
-- 
-
+- Falta de comunicação do squad, melhorando a longo prazo com método SCRUM e Daily.
+- Dificuldade com alguns termos técnicos e falta de prática na trilha de conhecimento, facilmente resolvido com auxílio de ferramentas como vídeoaulas, sites especializados e IA.
 ---
 
 ## *Rafael*
