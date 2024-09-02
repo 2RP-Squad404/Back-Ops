@@ -18,13 +18,13 @@ Este documento contém um resumo das atividades realizadas e problemas identific
 ## *Juan*
 
 ### Atividades Realizadas
-- 
+- Atividades 1 incompleta e atividade 2 completa mas com alguns erros. 
+- Estudo sobre sql/hive diretamente do CHATGPT(explicações e mal entendimentos, consultei o chat).
 
 ### Problemas Identificados
-- 
+- Dificuldade em algumas funções e sintaxe em sql/hive. Para mim, tive muita dificuldade em aprender e desenvolver as linguagens.
 
 ---
-
 ## *Gustavo Monteiro*
 
 ### Atividades Realizadas
