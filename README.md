@@ -1,6 +1,7 @@
 # Back-Ops
 <div style="text-align: justify;">
-> Resumo Semanal da Squad
+
+>Resumo Semanal da Squad
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Este documento contém um resumo das atividades realizadas e problemas identificados por cada membro da squad durante a última semana. Cada membro deve adicionar suas informações na seção correspondente ao seu nome.
 
@@ -89,8 +90,4 @@
 
 ### Problemas Identificados
 - Realização da query completa na atividade 2 devido erros de execução.
-
-## *Sobre o grupo*
-* O grupo consegue conversar e ajudar entre si;
-
 </div>
