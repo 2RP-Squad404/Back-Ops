@@ -60,6 +60,18 @@ Este documento contém um resumo das atividades realizadas e problemas identific
 
 ---
 
+## *Guilherme Kaneda*
+
+### Atividades realizadas
+- Atividades 1 e 2 concluídas;
+- Estudo sobre comandos CTE do SQL para subconsulta;
+- Curso de Python.
+
+### Problemas identificados
+- Dificuldade na organização da consulta principal da atividade 2.
+
+---
+
 ## *Henrique*
 
 ### Atividades Realizadas
