@@ -9,11 +9,11 @@
 
 1. [Juan](https://github.com/JJuanPablo)
 2. [Gustavo Monteiro](https://github.com/gmgpx)
-3. [Rafael](https://github.com/sinkevirns)
-4. [Luiz Talez](https://github.com/LuizTeles06)
+3. [Rafael Sinkevicius](https://github.com/sinkevirns)
+4. [Luiz Teles](https://github.com/LuizTeles06)
 5. [Henrique](https://github.com/Henferper)
 6. [Guilherme Camargo](https://github.com/GuilhermeAmargo)
-7. [Kaneda](https://github.com/GuilhermeKaneda)
+7. [Guilherme Kaneda](https://github.com/GuilhermeKaneda)
 
 
 ## *Juan*
