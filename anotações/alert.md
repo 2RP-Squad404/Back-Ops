@@ -6,9 +6,10 @@ Existem duas maneiras de criar alertas: utilizando **logs** ou criando **métric
 
 1. Acesse a **análise de registros**:
 
+2. Selecione a opção **Criar alerta**.
+
    ![Análise de Registros](images/image.png)
 
-2. Selecione a opção **Criar alerta**.
 
 3. Uma nova aba lateral será exibida para a criação da política do novo alerta, onde você poderá inserir:
    - Nome do alerta
