@@ -67,8 +67,8 @@ Pronto, a partir do momento que a versão for executada, o fluxo será executado
 
 Porém, é possível também executar manualmente o fluxo.
 
-![Executar agora](/images/executarAgora.png)
+![Executar agora](/anotações/images/executarAgora.png)
 
 Feito isso, um novo dataset com as views dos scripts irá aparecer no BigQuery com o sufixo escolhido.
 
-![BigQuery rotina](/images/rotinaBigquery.png)
+![BigQuery rotina](/anotações/images/rotinaBigquery.png)
