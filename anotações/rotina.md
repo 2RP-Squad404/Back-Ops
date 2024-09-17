@@ -17,21 +17,21 @@ Ou seja, é possível definir a frequência e o tempo de execução das rotinas,
 
 Dentro do BigQuery, devemos entrar na aba do DataForm.
 
-![DataForm](/images/dataform.png)
+![DataForm](/anotações/images/dataform.png)
 
 Uma vez dentro dele, criamos um repositório.
 
-![Criação do repositório](/images/criarRepositorio.png)
+![Criação do repositório](/anotações/images/criarRepositorio.png)
 
 ## Criação dos scripts
 
 Podemos criar, dentro do repositório, um espaço de trabalho para os scripts da rotina.
 
-![Espaço de trabalho](/images/espacoTrabalho.png)
+![Espaço de trabalho](/anotações/images/espacoTrabalho.png)
 
 No espeço de trabalho, adicionamos nossos scripts SQLX dentro da pasta definitions.
 
-![Pasta definitions](/images/definitions.png)
+![Pasta definitions](/anotações/images/definitions.png)
 
 ## Criação da versão da rotina
 
@@ -39,29 +39,29 @@ Depois de adicionados, realizamos o commit e push das alterações.
 
 Voltamos para o repositório para entrar na aba de Versões e Progamação.
 
-![Versões e Progamação](/images/versoes.png)
+![Versões e Progamação](/anotações/images/versoes.png)
 
 Agora, criamos um versão de rotina.
 
-![Criar Versão](/images/criarVersao.png)
+![Criar Versão](/anotações/images/criarVersao.png)
 
 Já para configurar a versão, definimos as especificações dela. O sufixo do esquema e tabela aparecerá no BigQuery, para diferenciar dos outros datasets e tabelas/views.
 
-![Configurar versão](/images/configVersao.png)
+![Configurar versão](/anotações/images/configVersao.png)
 
 ## Criação do fluxo da rotina
 
 Uma vez criado a versão, devemos criar o fluxo de trabalho, que executará a rotina de fato.
 
-![Criar fluxo de trabalho](/images/criarFluxo.png)
+![Criar fluxo de trabalho](/anotações/images/criarFluxo.png)
 
 Da mesma forma que a versão, configuramos o fluxo. Nosso fluxo irá ser executado, no caso, a cada 5 minutos.
 
-![Configurar fluxo de trabalho](/images/configFluxo.png)
+![Configurar fluxo de trabalho](/anotações/images/configFluxo.png)
 
 Podemos escolher quais scripts do repositório o nosso fluxo executará. Em nosso caso, todos serão executados.
 
-![Escolher execuções](/images/escolherExe.png)
+![Escolher execuções](/anotações/images/escolherExe.png)
 
 Pronto, a partir do momento que a versão for executada, o fluxo será executado a cada 5 minutos. 
 
