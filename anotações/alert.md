@@ -1,8 +1,15 @@
 # Alertas
 
+**Módulos:**  
+1. **Definição**
+2. **Criação de Alertas com Logs**
+3. **Criação de Alertas com Métricas**
+
+## Definição
+
 Existem duas maneiras de criar alertas: utilizando **logs** ou criando **métricas**. Abaixo estão os passos para cada método.
 
-## 1. Criação de Alertas com Logs
+## Criação de Alertas com Logs
 
 1. Acesse a **análise de registros**:
 
@@ -36,7 +43,7 @@ Existem duas maneiras de criar alertas: utilizando **logs** ou criando **métric
 
 8. Por fim, crie o alerta, que enviará notificações de acordo com os logs.
 
-## 2. Criação de Alertas com Métricas
+## Criação de Alertas com Métricas
 
 1. Acesse a **análise de registros** e, no menu lateral, selecione a opção **Alertas**:
 
