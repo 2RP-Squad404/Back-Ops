@@ -1,8 +1,22 @@
+<div style="text-align: justify;">
+
 # Relatórios
 
 **Data:** 13/09/2024
 
-## Gustavo Monteiro
+Este documento contém um resumo das atividades realizadas e problemas identificados por cada membro da squad durante a segunda semana.
+
+## Membros da Squad
+
+1. [Juan](https://github.com/JJuanPablo)
+2. [Gustavo Monteiro](https://github.com/gmgpx)
+3. [Rafael Sinkevicius](https://github.com/sinkevirns)
+4. [Luiz Teles](https://github.com/LuizTeles06)
+5. [Henrique](https://github.com/Henferper)
+6. [Guilherme Camargo](https://github.com/GuilhermeAmargo)
+7. [Guilherme Kaneda](https://github.com/GuilhermeKaneda)
+
+## *Gustavo Monteiro*
 
 ### Atividades Realizadas
 
@@ -19,7 +33,7 @@
 
 - Encontramos dúvidas no monitoramente do custo por usuario e contas de serviço, tentei alguma possibilidades como exportar a fatura para o Big Query e criar o painel a partir do Monitoring, gerar Query's na aba de Report's do Billing e agora criar Labels para cada membro do grupo para registrar quais serviços e custos numa tabela no Big Query, criando uma dashboard posteriormente no Monitoring.
 
-## Luiz Otavio
+## *Luiz Otavio*
 
 ### Atividades Realizadas
 
@@ -47,7 +61,7 @@ Com a ajuda dos demais integrantes da squad consegui:
 
 - Mesmo procurando bastante e testando sobre, não consegui entender como implementar o painel de monitoramento de custos por usuário nominal e ainda tenho dificuldade em fazer todas as ferramentas do bigquery e billing
 
-## Guilherme Kaneda
+## *Guilherme Kaneda*
 
 ### Atividades Realizadas
 
@@ -65,7 +79,7 @@ Com a ajuda dos demais integrantes da squad consegui:
 - Embora tenhamos obtido bons resultados com a criação de painéis, ainda não conseguimos gerar um que mostre os custos por usuário no Monitoring, devido ao atraso na exportação completa dos dados do Billing para o BigQuery.
 - Encontramos dificuldades com a API BigQuery Reservation, relacionada à mudança no modelo de cobrança de slots/hora para cobrança sob demanda.
 
-## Guilherme Camargo Silva
+## *Guilherme Camargo Silva*
 
 ### Atividades Realizadas
 - Realizei a criação de alertas para o projeto, sendo utilizando logs e métricas. Criei juntamente um alerta de custos para acompanhar os valores dos projetos. Com isso se tornou fácil receber notificações personalizados de acordo com as notificações desejadas.
@@ -76,7 +90,7 @@ Com a ajuda dos demais integrantes da squad consegui:
 ### Dúvidas
 - Minhas dúvidas foram em certos aspectos de configuração dos alertas.
 
-## Rafael Sinkevicius
+## *Rafael Sinkevicius*
 
 ### Atividades Realizadas
 
@@ -93,7 +107,7 @@ Com a ajuda dos demais integrantes da squad consegui:
 
 - Houve maior dificuldade e dúvidas em exportar o Billing para o monitoramento de gastos de cada usuário.
 
-## Henrique Fernandes Pereira (Back-end)
+## *Henrique Fernandes Pereira (Back-end)*
 
 ### Atividades Realizadas
 - Estou desenvolvendo o desafio da trilha de conhecimento do Back-End.
@@ -105,3 +119,4 @@ Durante o começo para o meio da semana estava trabalhando com o Apache Fafka da
 
 ### Dúvidas
 - Minhas dúvidas são em relação a organização de pastas da API como projeto, porém o líder da squad de Back-End (Kelvin) perguntou na última reunião que tivemos com o desenvolvedor Matheus sobre esse assunto. Logo tirarei dúvidas com ele sobre tal necessidade.
+</div>
