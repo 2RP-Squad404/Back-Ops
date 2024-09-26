@@ -1,0 +1,35 @@
+config {
+    type: "view",
+    database: "just-lore-435816-v8",
+    schema: "back_ops",
+    name: "first_view"
+}
+
+WITH locations AS (
+    SELECT client_id, purchase_location, ROW_NUMBER() OVER (PARTITION BY client_id ORDER BY COUNT(*) DESC) AS most_used 
+    FROM just-lore-435816-v8.back_ops.purchases GROUP BY client_id, purchase_location
+),
+datas_asc AS (
+    SELECT client_id, purchase_datetime, ROW_NUMBER() OVER (PARTITION BY client_id ORDER BY purchase_datetime ASC) AS data_asc 
+    FROM just-lore-435816-v8.back_ops.purchases
+),
+datas_desc AS (
+    SELECT client_id, purchase_datetime, ROW_NUMBER() OVER (PARTITION BY client_id ORDER BY purchase_datetime DESC) AS data_desc 
+    FROM just-lore-435816-v8.back_ops.purchases
+),
+total_price AS (
+    SELECT client_id, ROUND(SUM(price * amount * (1 - discount_applied)),2) as total_price 
+    FROM just-lore-435816-v8.back_ops.purchases GROUP BY client_id
+)
+
+SELECT t.client_id AS client_id, 
+    t.total_price AS total_price,
+    l.purchase_location AS most_purchase_location,  
+    a.purchase_datetime AS first_purchase, 
+    d.purchase_datetime AS last_purchase,
+    CURRENT_DATE AS data_today, 
+    CAST(FORMAT_DATE('%m%Y', CURRENT_DATE) AS int) AS anomes_today
+FROM total_price t JOIN locations l ON t.client_id = l.client_id AND l.most_used = 1
+JOIN datas_asc a ON l.client_id = a.client_id AND a.data_asc = 1
+JOIN datas_desc d ON a.client_id = d.client_id AND d.data_desc = 1
+GROUP BY t.client_id, l.purchase_location, a.purchase_datetime, d.purchase_datetime, t.total_price
