@@ -5,7 +5,7 @@ Anotações das tecnologias e APIs trabalhadas no ambiente do Google Cloud.
 ## Alertas:
 - [Alertas](/annotations/alerts/alert.md)
 - [Alertas pelo Cloud Shell](/annotations/alerts/alert_shell.md)
-- [Função dos alertas](/annotations/alerts/alert_services.md)
+- [Alertas por serviços](/annotations/alerts/alert_services.md)
 
 ## BigQuery:
 - [Exportação do Billing](/annotations/bigquery/export_billing.md)
