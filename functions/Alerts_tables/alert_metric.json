@@ -1,0 +1,40 @@
+{
+    "display_name": "Kaneda",
+    "documentation": {
+        "subject": "Alerta: Alto Contador de Bytes",
+        "content": "Este alerta e acionado quando o contador da metrica excede o limite especificado. Revise os logs para investigar possiveis problemas.",
+        "mime_type": "text/markdown"
+    },
+    "user_labels": {
+        "alert_type": "byte_count"
+    },
+    "conditions": [
+        {
+            "display_name": "Alerta de Contador de Bytes Global",
+            "condition_threshold": {
+                "aggregations": [
+                    {
+                        "alignment_period": {"seconds": 600},
+                        "per_series_aligner": "ALIGN_SUM"
+                    }
+                ],
+                "comparison": "COMPARISON_GT",
+                "duration": {"seconds": 60},
+                "filter": "resource.type = \"global\" AND metric.type = \"logging.googleapis.com/byte_count\"",
+                "threshold_value": 700000,
+                "trigger": {
+                    "count": 1
+                }
+            }
+        }
+    ],
+    "alert_strategy": {
+        "auto_close": {"seconds": 1800}
+    },
+    "combiner": "OR",
+    "enabled": true,
+    "notification_channels": [
+        "projects/just-lore-435816-v8/notificationChannels/8836513940278084884"
+    ],
+    "severity": "WARNING"
+}
