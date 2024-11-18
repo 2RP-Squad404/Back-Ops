@@ -1,0 +1,29 @@
+{
+    "display_name": "Teste",
+    "documentation": {
+        "content": "This alert monitors error logs. An incident is triggered immediately when any error is detected. Check the logs in Google Cloud Logging for more details.",
+        "mime_type": "text/markdown"
+    },
+    "conditions": [
+        {
+            "display_name": "Immediate error log detection",
+            "condition_matched_log": {
+                "filter": "severity=\"ERROR\"",
+                "label_extractors": {}
+            }
+        }
+    ],
+    "notification_channels": [
+        "projects/just-lore-435816-v8/notificationChannels/14243634302832358839"
+    ],
+    "combiner": "OR",
+    "enabled": true,
+    "alert_strategy": {
+        "notification_rate_limit": {
+            "period": {"seconds": 300}
+        }
+    },
+    "user_labels": {
+        "severity": "error"
+    }
+}

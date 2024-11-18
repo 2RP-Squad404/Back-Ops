@@ -2,16 +2,23 @@
 
 Anotações das tecnologias e APIs trabalhadas no ambiente do Google Cloud.
 
-- [Alertas](/annotations/alert.md)
-- [Exportação do Billign](/annotations/export_billing.md)
-- [Looker Studio](/annotations/lookerstudio.md)
-- [Monitoramento](/annotations/monitoring.md)
-- [Rotina](/annotations/routine.md)
+## Alertas:
+- [Alertas](/annotations/alerts/alert.md)
+- [Alertas pelo Cloud Shell](/annotations/alerts/alert_shell.md)
+- [Alertas por serviços](/annotations/alerts/alert_services.md)
 
-## Cloud Shell
+## BigQuery:
+- [Exportação do Billing](/annotations/bigquery/export_billing.md)
+- [Tabela de Jobs](/annotations/bigquery/jobs_table.md)
 
-Anotações das tecnologias e APIs trabalhadas pelo Cloud Shell.
+## Looker Studio:
+- [Looker Studio](/annotations/lookerstudio/lookerstudio.md)
 
-- [Monitoramento](/annotations/cloud_shell/monitoring.md)
-- [Rotina](/annotations/cloud_shell/routine.md)
-- [Alertas](/annotations/cloud_shell/alert_shell.md)
+## Monitoramento:
+- [Monitoramento](/annotations/monitoring/monitoring.md)
+- [Monitoramento pelo Cloud Shell](/annotations/monitoring/monitoring_shell.md)
+
+## DataForm:
+- [Rotina](/annotations/dataform/routine.md)
+- [Rotina pelo Cloud Shell](/annotations/dataform/routine_shell.md)
+- [Jobs por rotina](/annotations/dataform/job_label.md)

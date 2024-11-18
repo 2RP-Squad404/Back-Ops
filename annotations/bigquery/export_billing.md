@@ -12,26 +12,26 @@ O **Billing Export** no Google Cloud é uma ferramenta que manda seus dados de u
 
 Uma vez aberto o _Billing_, entramos na aba de **_billing export_**.
 
-![Export](images/export.png)
+![Export](../images/export.png)
 
 Aqui, devemos editar as configurações de **Standard usage cost** e **Detailed usage cost**.
 
 _Obs: No print estão habilitadas pois nosso projeto já está em progresso._
 
-![Edição das configurações](images/editconfig.png)
+![Edição das configurações](../images/editconfig.png)
 
 Dentro das configurações podemos escolher tanto o projeto quanto o dataset de destino para a criação da tabela de custo, sendo um dataset já existente ou cria-ló do zero.
 
 _Obs: Em nosso projeto foi criado um dataset chamado **all_bill_data** para melhor visualização dos custos._
 
-![Escolhendo um dataset](images/dataset.png)
+![Escolhendo um dataset](../images/dataset.png)
 
 Após o procedimento anterior, podemos salvar as altereções e esperar algumas horas até a criação do Dataset e das tabelas particionadas.
 
-![All_Bill_Data](images/allbilldata.png)
+![All_Bill_Data](../images/allbilldata.png)
 
 O processo de exportação de dados para as tabelas **_gcp_billing_export_** pode demorar entre algumas horas ou até mesmo 24h horas.
 
-![Células](images/celulas.png)
+![Células](../images/celulas.png)
 
 
