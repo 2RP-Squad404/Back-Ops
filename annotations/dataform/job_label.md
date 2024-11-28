@@ -41,7 +41,7 @@ Mas, na tabela JOBS_BY_PROJECT, o job tem coluna chamada parent_job, isto é, o 
 
 Dessa forma, na tabela de jobs criada: [Tabela dos Jobs](../bigquery/jobs_table.md), iremos adicionar uma nova coluna para indicar a rotina executada no parent_job do job com os rótulos criados.
 
-```
+```sql
 SELECT parent_label.value 
 FROM region-southamerica-east1.INFORMATION_SCHEMA.JOBS_BY_PROJECT AS parent
 CROSS JOIN UNNEST(parent.labels) AS parent_label
