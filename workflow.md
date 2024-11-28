@@ -2,6 +2,7 @@
 
 **Módulos:**  
 - Cloud Monitoring
+- Faturamento
 - Alertamento
 - Jobs
 
@@ -28,6 +29,36 @@ Apesar da boa interpretação do Cloud Monitoring, é considerável a exportaç�
 Nesse contexto, adicionamos uma função no Cloud Functions para a exportação dos registro periodicamente a uma tabela do BigQuery.
 
 [Função de exportação Cloud Monitoring](functions/export_cloud_monitoring.py)
+
+### Roteador de registros
+
+O roteador de registros pode ser usado para rotear determinadas entradas de registro para destinos em um projeto. Em nosso caso, exportamos os registros para um dataset do BigQuery, sem nenhum filtro. 
+
+Assim, diversas tabelas são criadas de acordo com o recurso dos registros.
+
+![Logs tables](annotations/images/logs_tables.png)
+
+À partir disso, é possível criar uma visualização direta e interativa no Looker Studio.
+
+![Lista de logs](annotations/images/logs_list.png)
+
+## :moneybag: Faturamento
+
+O Cloud Billing é um serviço que ajuda a rastrear e entender seus gastos em um projeto. 
+
+![Custo dos serviços](annotations/images/services_cost.png)
+
+A exportação do Cloud Billing para o BigQuery permite exportar dados detalhados ao longo do dia. Estes são os seguintes tipos de dados que podem ser ativados para exportação:
+
+![Tabelas do faturamento](annotations/images/billing_tables.png)
+
+Utilizamos comumente a tabela de exportação detalhada (gcp_billing_export_resource) para analisar os custos no nível do recurso e identificar serviços em específico. Em seguida, acessamos os dados exportados para análise detalhada através de scripts, ou exportamos os dados ao Looker Studio para uma visualização interativa. 
+
+![Faturamento visão geral](annotations/images/billing_overview.png)
+
+Além disso, com os custos categorizados por recurso, é possível filtrar pelos serviços de cada um. Em uma de nossas páginas, dedicamos para expor os recursos mais custosos do projeto.
+
+![Serviços visão geral](annotations/images/services_overview.png)
 
 ## :rotating_light: Alertamento
 
@@ -129,7 +160,7 @@ flowchart TD
     B --> C[Sim]
     C --> D[Recriar todos os alertas com as informações das colunas]
     D --> E[Excluir os alertas que não estão na tabela]
-    B --> G[Não] ---> F[Cadastras os emails e inserir seus IDs na tabela]
+    B --> G[Não] ---> F[Cadastrar os emails e inserir seus IDs na tabela]
     F --> D
 ```
 
@@ -141,7 +172,7 @@ Isso é possível com a exportação dos dados da tabela nativa `JOBS_BY_PROJECT
 
 [Anotação: Exportação dos Jobs](annotations/bigquery/jobs_table.md)
 
-```
+```sql
 CREATE OR REPLACE TABLE *tabela*
 PARTITION BY DATE(creation_time) AS
 SELECT *,
@@ -167,14 +198,17 @@ Uma das importantes caracteristicas de um Job do DataForm é a rotina a qual exe
 
 Porém, é necessário a transcrição do rótulo do Job para seu `parent_job`, já que esse possui o real custo de processamento de cada script da rotina.
 
-Para isso, como abordado no SELECT acima, a subsconsulta referente a essa coluna é:
+[Anotação: Rótulo de jobs](annotations/bigquery/job_label.md)
 
-```
+Para isso, como abordado na anotação acima, a subsconsulta referente a essa coluna é:
+
+```sql
 SELECT parent_label.value 
 FROM region-southamerica-east1.INFORMATION_SCHEMA.JOBS_BY_PROJECT AS parent
 CROSS JOIN UNNEST(parent.labels) AS parent_label
 WHERE parent.parent_job_id = jobs.job_id AND parent_label.key = 'routine'
 ```
 
-Nesse contexto, é possível criar um filtro pela métrica da rotina do DataForm no Looker Studio.
+Nesse contexto, é possível criar um filtro pela métrica da rotina do DataForm no Looker Studio, filtrando o custo e uso dos jobs por essa métrica.
 
+![Lista de jobs](annotations/images/jobs_list.png)
