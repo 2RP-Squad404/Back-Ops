@@ -12,7 +12,7 @@ A tabela JOBS_BY_PROJECT do INFORMATION_SCHEMA do BigQuery fornece informações
 
 A partir de um script SQL, é possível criar uma tabela em dataset com todas as informações da JOBS_BY_PROJECT.
 
-```
+```sql
 CREATE OR REPLACE TABLE just-lore-435816-v8.billing.jobs
 SELECT *
 FROM region-southamerica-east1.INFORMATION_SCHEMA.JOBS_BY_PROJECT
@@ -24,7 +24,7 @@ Porém, além de criar ela, devemos adicionar uma coluna de preço para cada job
 
 Ou seja, para cada TB gasto, R$64,00 serão cobrados. Portanto, devemos converter o total de bytes gasto em TB, divindo-o por 10^12 e, por fim, multiplicando por 64.
 
-```
+```sql
 CREATE OR REPLACE TABLE just-lore-435816-v8.billing.jobs
 PARTITION BY DATE(creation_time) AS
 SELECT 
@@ -38,58 +38,39 @@ Além disso, é essencial o particionamento da tabela. Para isso, utilizamos a c
 
 ## Simplicar criação da tabela
 
-Como devemos manter atualizada essa tabela, uma rotina no DataForm para sua recriação seria custosa, logo, criamos usamos o MERGE, comando incremental do SQL, para adicionarmos somente as linhas que não estão nela.
+Como devemos manter atualizada essa tabela, uma rotina no DataForm para sua recriação seria custosa, logo, criamos um script SQLX do tipo incremental.
 
-```
-MERGE INTO integracaohomologado.billing.jobs AS target
-USING (
-  SELECT creation_time,
-    project_id,
-    project_number,
-    user_email,
-    job_id,
-    job_type,
-    statement_type,
-    start_time,
-    end_time,
-    total_bytes_processed,
-    labels,
-    total_bytes_billed,
-    parent_job_id,
-    (total_bytes_billed / POW(10, 12)) * 64 AS price
-  FROM region-southamerica-east1.INFORMATION_SCHEMA.JOBS_BY_PROJECT AS jobs
-  WHERE total_bytes_billed > 0
-) AS source
-ON target.job_id = source.job_id
-WHEN NOT MATCHED THEN
-  INSERT (creation_time,
-    project_id,
-    project_number,
-    user_email,
-    job_id,
-    job_type,
-    statement_type,
-    start_time,
-    end_time,
-    total_bytes_processed,
-    labels,
-    total_bytes_billed,
-    parent_job_id,
-    price)
-  VALUES (source.creation_time,
-    source.project_id,
-    source.project_number,
-    source.user_email,
-    source.job_id,
-    source.job_type,
-    source.statement_type,
-    source.start_time,
-    source.end_time,
-    source.total_bytes_processed,
-    source.labels,
-    source.total_bytes_billed,
-    source.parent_job_id,
-    source.price);
+```sql
+config {
+   type: "incremental",
+    database: "integracaohomologado",
+    schema: "billing",
+    name: "jobs",
+}
+
+WITH routine AS (
+  SELECT 
+    parent.parent_job_id AS routine_parent_job_id, 
+    parent_label.value AS routine
+  FROM region-southamerica-east1.INFORMATION_SCHEMA.JOBS_BY_PROJECT AS parent
+  CROSS JOIN UNNEST(parent.labels) AS parent_label
+  WHERE parent_label.key = 'routine'
+  GROUP BY parent.parent_job_id, parent_label.value 
+)
+
+SELECT 
+  jobs.*,
+  (jobs.total_bytes_billed / POW(10, 12)) * 64 AS price,
+  (SELECT value FROM UNNEST(jobs.labels) WHERE key = 'dataform_repository_id') AS dataform_repository,
+  routine.routine AS routine
+FROM region-southamerica-east1.INFORMATION_SCHEMA.JOBS_BY_PROJECT AS jobs
+LEFT JOIN routine 
+  ON routine.routine_parent_job_id = jobs.job_id
+WHERE jobs.total_bytes_billed > 0 AND job_id NOT IN (SELECT job_id FROM integracaohomologado.billing.jobs)
 ```
 
-Nesse caso, fomos obrigados a indicar as colunas a serem atualizadas, assim, decidimos em reduzir a tabela a apenas as colunas que iremos usar.
+Devemos adicionar somente as linhas que não estão na tabela. 
+
+```sql
+WHERE job_id NOT IN (SELECT job_id FROM integracaohomologado.billing.jobs)
+```
