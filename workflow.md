@@ -48,7 +48,11 @@ O Cloud Billing é um serviço que ajuda a rastrear e entender seus gastos em um
 
 ![Custo dos serviços](annotations/images/services_cost.png)
 
-A exportação do Cloud Billing para o BigQuery permite exportar dados detalhados ao longo do dia. Estes são os seguintes tipos de dados que podem ser ativados para exportação:
+A exportação do Cloud Billing para o BigQuery permite exportar dados detalhados ao longo do dia. 
+
+[Anotação: Exportação do faturamento](annotations/bigquery/export_billing.md)
+
+Estes são os seguintes tipos de dados que podem ser ativados para exportação:
 
 ![Tabelas do faturamento](annotations/images/billing_tables.png)
 
