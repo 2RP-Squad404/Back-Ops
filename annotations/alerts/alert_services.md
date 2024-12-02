@@ -2,11 +2,8 @@
 
 **Módulos:**  
 1. **Definição**
-
 2. **Alerta por custos de serviços**
-
 3. **Alerta por bytes processados por serviços**
-
 4. **Conclusão**
 
 ## Definição
