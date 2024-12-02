@@ -1,10 +1,10 @@
 # Fluxo de trabalho
 
 **Módulos:**  
-- Cloud Monitoring
-- Faturamento
-- Alertamento
-- Jobs
+1. **Cloud Monitoring**
+2. **Faturamento**
+3. **Alertamento**
+4. **Jobs**
 
 ## :mag_right: Cloud Monitoring 
 
@@ -113,7 +113,7 @@ Além da definição manual, os alertas podem ser criados pelo terminal do Cloud
 
 ### Alertas por custo de serviços
 
-Os alertas de custos permitem monitorar o faturamento de uma conta e enviar notificações automáticas quando os custos atingem percentuais pré-definidos.. Essa configuração ajuda a monitorar os custos acumulados de serviços específicos e a evitar estouros de orçamento.
+Os alertas de custos permitem monitorar o faturamento de uma conta e enviar notificações automáticas quando os custos atingem percentuais pré-definidos. Essa configuração ajuda a monitorar os custos acumulados de serviços específicos e a evitar estouros de orçamento.
 
 ```mermaid
 flowchart TD    
