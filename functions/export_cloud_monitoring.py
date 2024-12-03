@@ -31,8 +31,6 @@ headers = {"Authorization": f"Bearer {auth_token}"}
 
 # Requisição HTTP
 response = requests.get(url, headers=headers, params=params)
-
-# Carrega a resposta JSON
 data = response.json()
 
 # Se 'data' não é uma lista, você pode precisar convertê-lo em uma lista.
@@ -53,8 +51,6 @@ job_config = bigquery.LoadJobConfig(
 
 # Exporta para a tabela
 load_job = client.load_table_from_json(data, table_ref, job_config=job_config)
-
-# Aguarda a conclusão
 load_job.result()
 
 #----------------------------------------------------------------------------------------------------------
@@ -71,8 +67,6 @@ params = {
 
 # Requisição HTTP
 response = requests.get(url, headers=headers, params=params)
-
-# Carrega a resposta JSON
 data = response.json()
 
 # Se 'data' não é uma lista, você pode precisar convertê-lo em uma lista.
@@ -84,8 +78,6 @@ table_ref = client.dataset(dataset_id).table(table_id)
 
 # Exporta para a tabela
 load_job = client.load_table_from_json(data, table_ref, job_config=job_config)
-
-# Aguarda a conclusão
 load_job.result()
 
 #----------------------------------------------------------------------------------------------------------
@@ -102,8 +94,6 @@ params = {
 
 # Requisição HTTP
 response = requests.get(url, headers=headers, params=params)
-
-# Carrega a resposta JSON
 data = response.json()
 
 if isinstance(data, dict):
@@ -114,8 +104,6 @@ table_ref = client.dataset(dataset_id).table(table_id)
 
 # Exporta para a tabela
 load_job = client.load_table_from_json(data, table_ref, job_config=job_config)
-
-# Aguarda a conclusão
 load_job.result()
 
 #----------------------------------------------------------------------------------------------------------
@@ -132,8 +120,6 @@ params = {
 
 # Requisição HTTP
 response = requests.get(url, headers=headers, params=params)
-
-# Carrega a resposta JSON
 data = response.json()
 
 if isinstance(data, dict):
