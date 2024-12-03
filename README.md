@@ -13,6 +13,7 @@ Anotações das tecnologias e APIs trabalhadas no ambiente do Google Cloud.
 
 ## Looker Studio:
 - [Looker Studio](/annotations/lookerstudio/lookerstudio.md)
+- [Páginas dos Looker Studio](/annotations/lookerstudio/pages.md)
 
 ## Monitoramento:
 - [Monitoramento](/annotations/monitoring/monitoring.md)
